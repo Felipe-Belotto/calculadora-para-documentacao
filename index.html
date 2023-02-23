@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Calculadora</title>
+</head>
+<body>
+        <!-- Inicio da calculadora -->
+        <div class="calculadora">
+        <div class="caixa_calculadora" id="calculadora"> 
+        <h1 class="titulo-pagina">Calculadora <br>de documentação</h1>
+    
+        <div class="preencher_conteudo" id="conteudo_tela">
+    
+        <div class="caixa_compra caixa_preencher">
+        <p class="caixa_informativa">Valor do compra e venda</p>
+        <input type="number" name="compra" id="compra" class="box_preencher sumir" autocomplete="off" placeholder="R$ 000.000,00"> 
+        <!-- Poderia utilizar maxlength para selecionar até quantos caracteres quero que coloquem -->
+        </div>
+    
+        <div class="caixa_financiamento caixa_preencher">
+        <p class="caixa_informativa">Valor do financiamento</p>
+        <input type="number" name="financiamento" id="financiamento" class="box_preencher" autocomplete="off" placeholder="R$ 000.000,00"></div>
+    
+        <div class="caixa_cidade caixa_preencher">
+        <p class="caixa_informativa">Cidade</p>
+         <select id="cidade" class="box_preencher" >
+            <option value="campinas">Campinas</option>
+            <option value="guarulhos">Guarulhos</option>
+        </select> </div>
+        
+        <div class="caixa_enquadramento caixa_preencher">
+        <p class="caixa_informativa informativa-enquadramento">Enquadramento</p>
+        <select id="enquadramento" class="box_preencher">
+            <option value="nenhum"></option>
+            <option value="mcmv">MCMV</option>
+            <option value="pro_cotista">Pró cotista</option>
+            <option value="sbpe">SBPE</option>
+        </select></div>
+       
+        <div class="caixa_banco caixa_preencher">
+        <p class="caixa_informativa">Banco</p>
+        <select id="banco" class="box_preencher">
+            <option value="caixa">Caixa</option>
+            <option value="bb">Banco do Brasil</option>
+            <option value="itau">Itau</option>
+        </select></div> 
+        <br>
+        <div id="resposta" class="caixa_resposta"></div> 
+        <div class="caixa_botao"> 
+        <input type="button" class="botao" value="recarregar" id="botaoRecarregar"></div>
+    
+        <script src="assets/script.js"></script>
+        </div>
+    </div>
+        <!-- Final da calculadora -->   
+</body>
+</html>
