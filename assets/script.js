@@ -26,7 +26,7 @@ function calculaDocumentacao() {
 
     let valoresCampinas = {
         limiteFGTSCampinas: 264000,
-        relacionamentoCampinas: 1200,
+        relacionamentoCampinas: 1500,
         itbiCampinas: valorCompra * 0.027
     }
 
