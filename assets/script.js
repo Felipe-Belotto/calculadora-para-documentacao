@@ -30,9 +30,9 @@ function calculaDocumentacao() {
         itbiCampinas: valorCompra * 0.027
     }
 
-    let limiteFGTSCampinas = valoresCampinas.limiteFGTSCampinas;
-    let relacionamentoCampinas = valoresCampinas.relacionamentoCampinas;
-    let itbiCampinas = valoresCampinas.itbiCampinas;
+    const limiteFGTSCampinas = valoresCampinas.limiteFGTSCampinas;
+    const relacionamentoCampinas = valoresCampinas.relacionamentoCampinas;
+    const itbiCampinas = valoresCampinas.itbiCampinas;
 
 
     let valoresGuarulhos = {
@@ -41,9 +41,9 @@ function calculaDocumentacao() {
         itbiGuarulhos: (financiamento * 0.005) + (recursosProprios * 0.02)
     }
 
-    let limiteFGTSGuarulhos = valoresGuarulhos.limiteFGTSGuarulhos
-    let relacionamentoGuarulhos = valoresGuarulhos.relacionamentoGuarulhos
-    let itbiGuarulhos = valoresGuarulhos.itbiGuarulhos
+    const limiteFGTSGuarulhos = valoresGuarulhos.limiteFGTSGuarulhos
+    const relacionamentoGuarulhos = valoresGuarulhos.relacionamentoGuarulhos
+    const itbiGuarulhos = valoresGuarulhos.itbiGuarulhos
 
     /* Final das opções de cidade */
 
