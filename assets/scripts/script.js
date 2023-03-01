@@ -23,34 +23,41 @@ function calculaDocumentacao() {
 
     const minimoValorDeCompra = 62500
 
-    
-    if (cidade.value == "campinas") {
-        limiteFGTS = 264000
-        relacionamento = 1500   
-        itbi = valorCompra * 0.027
+    switch (cidade.value) {
+        
+    case "campinas":
+            limiteFGTS = 264000
+            relacionamento = 1500   
+            itbi = valorCompra * 0.027
+            break
+        
+    case "guarulhos":
+            limiteFGTS = 264000 
+            relacionamento = 500
+            itbi = (financiamento * 0.005) + (recursosProprios * 0.02)
+            break
     }
-
-    
-    else if (cidade.value == "guarulhos") {
-        limiteFGTS = 264000 
-        relacionamento = 500
-        itbi = (financiamento * 0.005) + (recursosProprios * 0.02)
-    }
-
-    
-
-    function calculaVistoria() {
-        if (banco.value == "caixa") {
-            if (enquadramento.value == "mcmv") { return vistoria = financiamento * 0.015 }
-            else if (enquadramento.value == "pro_cotista") { return vistoria = financiamento * 0.015 }
-            else if (enquadramento.value == "sbpe") { return vistoria = 955 }
+   
+    switch(banco.value){
+        case "caixa":
+            switch (enquadramento.value){
+                 case "mcmv":  vistoria = financiamento * 0.015 
+            break
+                case "pro_cotista": vistoria = financiamento * 0.015
+            break 
+                case "sbpe": vistoria = 955 
+            break
         }
+            break
 
-        else if (banco.value == "bb") { return vistoria = 1350 }
+        case "bb": vistoria = 1350 
+        break
 
-        else if (banco.value == "itau") { return vistoria = 1950 }
-
+        case "itau": vistoria = 1950 
+        break
     }
+    
+   
 
     function calculaRegistro(valorCompra) {
         /* Valores dos serviços cartórarios sem desconto, usando a tabela de SP como refêrencia */
@@ -170,7 +177,7 @@ function calculaDocumentacao() {
         }
     }
 
-    calculaVistoria()
+    
     calculaRegistro(valorCompra)
     imprimeResultado()
 }
