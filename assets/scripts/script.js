@@ -107,79 +107,83 @@ function calculaDocumentacao() {
             resultado(`O valor do financiamento máximo é ${modificaDinheiroReal(maximoFinanciamento)}`)
         }
 
-        else if (banco.value == "caixa") {
-            banco.style.backgroundColor = "#11114E";
-            banco.style.color = "white";
+        switch (banco.value) {
 
-            if (enquadramento.value == "mcmv") {
-                if (valorCompra > limiteFGTS) {
-                    executaErro()
-                    resultado(" O valor do imóvel está acima do limite (MCMV)")
-                }
-                else {
-                    validaErro()
-                    resultado(
-                        `TAXA A VISTA: ${modificaDinheiroReal(vistoria)} `
-                        + `<br>` + `RELACIONAMENTO: ${modificaDinheiroReal(relacionamento)}`
-                        + `<br>` + `ITBI: ${modificaDinheiroReal(itbi)}`
-                        + `<br>` + `REGISTRO: ${modificaDinheiroReal(registro)}`)
-                }
-            }
-
-            else if (enquadramento.value == "nenhum") {
+            case "nenhum":
                 executaErro()
                 resultado("Preencha todos os campos")
-            }
+                break
 
-            else {
+            case "caixa":
+                banco.style.backgroundColor = "blue";
+                banco.style.color = "white";
+        
+                switch (enquadramento.value) {
+        
+                    case "mcmv":
+                        if (valorCompra > limiteFGTS) {
+                            executaErro()
+                            resultado(" O valor do imóvel está acima do limite (MCMV)")
+                        }
+                        else {
+                            validaErro()
+                            resultado(
+                                `TAXA A VISTA: ${modificaDinheiroReal(vistoria)} `
+                                + `<br>` + `RELACIONAMENTO: ${modificaDinheiroReal(relacionamento)}`
+                                + `<br>` + `ITBI: ${modificaDinheiroReal(itbi)}`
+                                + `<br>` + `REGISTRO: ${modificaDinheiroReal(registro)}`)
+                        }
+                        break
+        
+                    case "pro_cotista":
+                        validaErro()
+                        resultado(
+                            `TAXA A VISTA: ${modificaDinheiroReal(vistoria)} `
+                            + `<br>` + `RELACIONAMENTO: ${modificaDinheiroReal(relacionamento)}`
+                            + `<br>` + `ITBI: ${modificaDinheiroReal(itbi)}`
+                            + `<br>` + `REGISTRO: ${modificaDinheiroReal(registro)}`)
+                        break
+        
+                    case "sbpe":
+                        validaErro()
+                        resultado(
+                            `TAXA A VISTA: ${modificaDinheiroReal(vistoria)} `
+                            + `<br>` + `RELACIONAMENTO: ${modificaDinheiroReal(relacionamento)}`
+                            + `<br>` + `ITBI: ${modificaDinheiroReal(itbi)}`
+                            + `<br>` + `REGISTRO: ${modificaDinheiroReal(registro)}`)
+                        break
+                }
+        
+            case "bb":
+                banco.style.backgroundColor = "#EEAD2D";
+                banco.style.color = "#010158";
+        
+                if (enquadramento.value == "mcmv") {
+                    if (valorCompra > limiteFGTS) {
+                        executaErro()
+                        resultado(" O valor do imóvel está acima do limite (MCMV)")
+                    }
+        
+                    else {
+                        validaErro()
+                        resultado(`TAXA A VISTA: ${modificaDinheiroReal(vistoria)} `
+                            + `<br>` + `ITBI: ${modificaDinheiroReal(itbi)}`
+                            + `<br>` + `REGISTRO: ${modificaDinheiroReal(registro)}`)
+                    }
+                }
+                break
+        
+            case "itau":
+                banco.style.backgroundColor = "#D75413";
+                banco.style.color = "#010158";
+        
                 validaErro()
                 resultado(`TAXA A VISTA: ${modificaDinheiroReal(vistoria)} `
-                    + `<br>` + `RELACIONAMENTO: ${modificaDinheiroReal(relacionamento)}`
                     + `<br>` + `ITBI: ${modificaDinheiroReal(itbi)}`
                     + `<br>` + `REGISTRO: ${modificaDinheiroReal(registro)}`)
-            }
-        }
-
-        else if (banco.value == "bb") {
-            banco.style.backgroundColor = "#EEAD2D";
-            banco.style.color = "#010158";
-
-            if (enquadramento.value == "mcmv") {
-                if (valorCompra > limiteFGTS) {
-                    executaErro()
-                    resultado(" O valor do imóvel está acima do limite (MCMV)")
-                }
-
-                else {
-                    validaErro()
-                    resultado(`TAXA A VISTA: ${modificaDinheiroReal(vistoria)} `
-                        + `<br>` + `ITBI: ${modificaDinheiroReal(itbi)}`
-                        + `<br>` + `REGISTRO: ${modificaDinheiroReal(registro)}`)
-                }
-            }
-
-            else if (enquadramento.value == "nenhum") {
-                executaErro()
-                resultado("Preencha todos os campos")
-            }
-
-            else {
-                validaErro()
-                resultado(`TAXA A VISTA: ${modificaDinheiroReal(vistoria)} `
-                    + `<br>` + `ITBI: ${modificaDinheiroReal(itbi)}`
-                    + `<br>` + `REGISTRO: ${modificaDinheiroReal(registro)}`)
-            }
-        }
-
-        else if (banco.value == "itau") {
-            banco.style.backgroundColor = "#D75413";
-            banco.style.color = "#010158";
-            validaErro()
-            resultado(`TAXA A VISTA: ${modificaDinheiroReal(vistoria)} `
-                + `<br>` + `ITBI: ${modificaDinheiroReal(itbi)}`
-                + `<br>` + `REGISTRO: ${modificaDinheiroReal(registro)}`)
-        }
-    }
+            break
+        
+    }}
 
     calculaRegistro(valorCompra)
     imprimeResultado()
