@@ -71,15 +71,14 @@ function calculaDocumentacao() {
           { valorMin: 1027800.01, valorMax: 1370400.01, valor: 5441.15 },
           { valorMin: 1370400.01, valorMax: 1713000.01, valor: 6244.06 },
           { valorMin: 1713000.01, valorMax: 2055600.01, valor: 6659.19 },
-          { valorMin: 2055600.01, valorMax: 3426000, valor: 8734.85 },
-        ];
+          { valorMin: 2055600.01, valorMax: 3426000, valor: 8734.85 },]
       
-        let Cartorio = valoresRegistro.find(valorCartorio => valorCompra > valorCartorio.valorMin && valorCompra < valorCartorio.valorMax);
+        let Cartorio = valoresRegistro.find(valorCartorio => valorCompra > valorCartorio.valorMin && valorCompra < valorCartorio.valorMax)
       
         if (!Cartorio) {
-          return registro = "Compra e venda fora do limite da nossa programação";
+          return registro = "Compra e venda fora do limite da nossa programação"
         }
-         return registro = Cartorio.valor;
+         return registro = Cartorio.valor
       }
       
     function imprimeResultado() {
