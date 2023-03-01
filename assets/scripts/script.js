@@ -21,7 +21,7 @@ function calculaDocumentacao() {
 
     let resposta = window.document.getElementById('resposta')
 
-    const minimoValorDeCompra = 62500
+    let minimoValorDeCompra = 62500
 
     switch (cidade.value) {
 
@@ -82,9 +82,12 @@ function calculaDocumentacao() {
     }
 
     function imprimeResultado() {
+
         botaoRecarregar.style.display = "block"
         resposta.style.display = "flex";
+        
         maximoFinanciamento = valorCompra * 0.8
+
         resultado = (valor) => { resposta.innerHTML = valor }
 
         function executaErro() {
@@ -97,16 +100,22 @@ function calculaDocumentacao() {
             resposta.classList.add('caixa_reposta')
         }
 
-        if (Number(valorCompra) < minimoValorDeCompra) {
+        if (valorCompra < minimoValorDeCompra) {
+            console.log(valorCompra)
             executaErro()
             resultado(`O valor de compra precisa ser no minimo ${modificaDinheiroReal(minimoValorDeCompra)}`)
         }
 
-        else if (financiamento > maximoFinanciamento) {
+        else {
+        resultado("preencha todos os dados")
+        }
+
+        if (financiamento > maximoFinanciamento) {
             executaErro()
             resultado(`O valor do financiamento máximo é ${modificaDinheiroReal(maximoFinanciamento)}`)
         }
 
+        else {
 
         switch (banco.value) {
 
@@ -185,7 +194,10 @@ function calculaDocumentacao() {
                     + `<br>` + `ITBI: ${modificaDinheiroReal(itbi)}`
                     + `<br>` + `REGISTRO: ${modificaDinheiroReal(registro)}`)
                 break
+            }
+
         }
+
     }
 
     calculaRegistro(valorCompra)
