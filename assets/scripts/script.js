@@ -152,8 +152,10 @@ function calculaDocumentacao() {
                             + `<br>` + `RELACIONAMENTO: ${modificaDinheiroReal(relacionamento)}`
                             + `<br>` + `ITBI: ${modificaDinheiroReal(itbi)}`
                             + `<br>` + `REGISTRO: ${modificaDinheiroReal(registro)}`)
-                }
-                break
+                            break
+                        }
+            break
+               
 
             case "bb":
                 banco.style.backgroundColor = "#EEAD2D";
@@ -183,7 +185,6 @@ function calculaDocumentacao() {
                     + `<br>` + `ITBI: ${modificaDinheiroReal(itbi)}`
                     + `<br>` + `REGISTRO: ${modificaDinheiroReal(registro)}`)
                 break
-
         }
     }
 
