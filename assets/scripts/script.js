@@ -12,12 +12,13 @@ let modificaDinheiroReal = (valor) => { return valor.toLocaleString('pt-br', { s
 
 function calculaDocumentacao() {
 
-    let cidade = document.getElementById('cidade')
-    let enquadramento = document.getElementById('enquadramento')
-    let banco = document.getElementById('banco')
     const valorCompra = window.document.getElementById('compra').valueAsNumber
     const financiamento = window.document.getElementById('financiamento').valueAsNumber
     const recursosProprios = valorCompra - financiamento
+    const cidade = document.getElementById('cidade')
+    const enquadramento = document.getElementById('enquadramento')
+    const banco = document.getElementById('banco')
+    
     let resposta = window.document.getElementById('resposta')
 
     const minimoValorDeCompra = 62500
@@ -46,6 +47,22 @@ function calculaDocumentacao() {
     const itbiGuarulhos = valoresGuarulhos.itbiGuarulhos
 
     /* Final das opções de cidade */
+
+    /* CAMPINAS */
+    if (cidade.value == "campinas") {
+        limiteFGTS = limiteFGTSCampinas
+        relacionamento = relacionamentoCampinas
+        itbi = itbiCampinas
+    }
+
+    /* GUARULHOS */
+    else if (cidade.value == "guarulhos") {
+        limiteFGTS = limiteFGTSGuarulhos
+        relacionamento = relacionamentoGuarulhos
+        itbi = itbiGuarulhos
+    }
+
+    
 
     function calculaVistoria() {
         if (banco.value == "caixa") {
@@ -176,20 +193,6 @@ function calculaDocumentacao() {
                 + `<br>` + `ITBI: ${modificaDinheiroReal(itbi)}`
                 + `<br>` + `REGISTRO: ${modificaDinheiroReal(registro)}`)
         }
-    }
-
-    /* CAMPINAS */
-    if (cidade.value == "campinas") {
-        limiteFGTS = limiteFGTSCampinas
-        relacionamento = relacionamentoCampinas
-        itbi = itbiCampinas
-    }
-
-    /* GUARULHOS */
-    else if (cidade.value == "guarulhos") {
-        limiteFGTS = limiteFGTSGuarulhos
-        relacionamento = relacionamentoGuarulhos
-        itbi = itbiGuarulhos
     }
 
     calculaVistoria()
