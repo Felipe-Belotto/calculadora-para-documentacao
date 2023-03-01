@@ -165,7 +165,6 @@ function calculaDocumentacao() {
                         }
             break
                
-
             case "bb":
                 banco.style.backgroundColor = "#EEAD2D";
                 banco.style.color = "#010158";
