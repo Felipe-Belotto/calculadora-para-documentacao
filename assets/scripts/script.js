@@ -22,44 +22,19 @@ function calculaDocumentacao() {
     let resposta = window.document.getElementById('resposta')
 
     const minimoValorDeCompra = 62500
+
     
-    /* Opções de cidades */
-
-    let valoresCampinas = {
-        limiteFGTSCampinas: 264000,
-        relacionamentoCampinas: 1500,
-        itbiCampinas: valorCompra * 0.027
-    }
-
-    const limiteFGTSCampinas = valoresCampinas.limiteFGTSCampinas;
-    const relacionamentoCampinas = valoresCampinas.relacionamentoCampinas;
-    const itbiCampinas = valoresCampinas.itbiCampinas;
-
-
-    let valoresGuarulhos = {
-        limiteFGTSGuarulhos: 264000,
-        relacionamentoGuarulhos: 500,
-        itbiGuarulhos: (financiamento * 0.005) + (recursosProprios * 0.02)
-    }
-
-    const limiteFGTSGuarulhos = valoresGuarulhos.limiteFGTSGuarulhos
-    const relacionamentoGuarulhos = valoresGuarulhos.relacionamentoGuarulhos
-    const itbiGuarulhos = valoresGuarulhos.itbiGuarulhos
-
-    /* Final das opções de cidade */
-
-    /* CAMPINAS */
     if (cidade.value == "campinas") {
-        limiteFGTS = limiteFGTSCampinas
-        relacionamento = relacionamentoCampinas
-        itbi = itbiCampinas
+        limiteFGTS = 264000
+        relacionamento = 1500   
+        itbi = valorCompra * 0.027
     }
 
-    /* GUARULHOS */
+    
     else if (cidade.value == "guarulhos") {
-        limiteFGTS = limiteFGTSGuarulhos
-        relacionamento = relacionamentoGuarulhos
-        itbi = itbiGuarulhos
+        limiteFGTS = 264000 
+        relacionamento = 500
+        itbi = (financiamento * 0.005) + (recursosProprios * 0.02)
     }
 
     
