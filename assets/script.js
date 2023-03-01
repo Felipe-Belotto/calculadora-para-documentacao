@@ -1,6 +1,6 @@
 
     let calcular = document.getElementById("conteudo_tela")
-    calcular.addEventListener('mousemove',calculaDocumentacao)
+    calcular.addEventListener('input',calculaDocumentacao)
 
     let botaoRecarregar = document.getElementById("botaoRecarregar")
     botaoRecarregar.addEventListener('click',recarregaPagina)
@@ -21,15 +21,15 @@
     const recursosProprios = valorCompra - financiamento
     let resposta = window.document.getElementById('resposta')
 
-    minimoValorDeCompra = 62500
+    const minimoValorDeCompra = 62500
     /* Valores de Campinas */
-    limiteFGTSCampinas = 264000
-    relacionamentoCampinas = 1200
-    itbiCampinas = valorCompra * 0.027
+    const limiteFGTSCampinas = 264000
+    const relacionamentoCampinas = 1200
+    const itbiCampinas = valorCompra * 0.027
     /* Valores de Guarulhos */
-    limiteFGTSGuarulhos = 264000
-    relacionamentoGuarulhos= 500
-    itbiGuarulhos=(financiamento * 0.005) + (recursosProprios * 0.02)
+    const limiteFGTSGuarulhos = 264000
+    const relacionamentoGuarulhos= 500
+    const itbiGuarulhos=(financiamento * 0.005) + (recursosProprios * 0.02)
 
     let modificaDinheiroReal = (valor) => {return valor.toLocaleString('pt-br',{style:'currency', currency:'BRL'});}
 
