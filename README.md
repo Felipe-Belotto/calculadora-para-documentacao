@@ -1,0 +1,7 @@
+# calculadora-para-documentacao
+calculadora para documentação de financiamento imobiliario
+
+Esse projeto foi utilizado como estudo prático, escrevi o código durante meu início de estudo de js e fui aprimorando conforme fui adquirindo conhecimento.
+
+[Veja o projeto pelo Vercel](https://calculadora-para-documentacao.vercel.app/)
+
