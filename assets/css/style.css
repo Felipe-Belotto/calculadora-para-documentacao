@@ -24,8 +24,8 @@ body {
 }
 
 .main {
-    width: 20vw;
-    height: auto;
+    width: 40vw;
+    height: 50vh;
     font-size: 16px;
 }
 
@@ -152,7 +152,7 @@ body {
 
 @media (max-width: 500px) {
     * {
-        margin: 0;
+        margin:0;
         padding: 0;
     }
 
@@ -161,10 +161,12 @@ body {
         margin: 0;
     }
 
-    .calculadora {
-        margin: 2em 0;
+    .main {
+        width: 100vw;
+        height: 100vh;
+        margin: 5vh 0 0 0;
         padding: 0;
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .caixa_calculadora {
@@ -178,6 +180,7 @@ body {
     }
 
     #resposta {
+        margin: 1em 0 0 0;
         height: 12em;
     }
 
