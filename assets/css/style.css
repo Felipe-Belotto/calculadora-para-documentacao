@@ -8,7 +8,8 @@
     --cor-calculadora: var(--fundo-calculadora) ;
     --fundo-calculadora: #040908;
     --cor-hover: #252525;
-    --input: var(--fundo-calculadora);
+    --caixa-informativa: var(--fundo-calculadora);
+    --caixa-input: var(--fundo-calculadora);
     --tela-resultado: var(--branco);
     --cor-resultado: var(--cor-texto);
     --cor-erro: #8B0000;
@@ -16,24 +17,24 @@
 }
 
 body {
+    padding: 0;
+    margin:0;
     display: flex;
     justify-content: center;
     background: var(--fundo-pag);
     font-weight: 100;
-    margin: 6em 0 0 0;
+    
 }
 
-.main {
-    width: 40vw;
-    height: 50vh;
-    font-size: 16px;
+.main{
+    width: 25vw;
 }
 
 .caixa_calculadora {
     width: 100%;
     height: 100%;
-    padding: 0.5em;
-    margin: 0;
+    padding: 0;
+    margin: 10vh 0 0 0;
     border-radius: 1em;
     text-align: center;
     color: var(--branco);
@@ -44,10 +45,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 0 1em 0;
+    margin: 0 0 3vh 0;
     padding: 1em;
     border-radius: 0.5em 0.5em 0 0;
     text-transform: uppercase;
+    font-size: 2em;
 }
 
 .preencher_conteudo {
@@ -70,13 +72,14 @@ body {
     width: 50%;
     height: 2em;
     margin: 0;
+    background-color: var(--caixa-informativa);
 }
 
 .box_preencher {
     width: 50%;
     height: 2.4em;
     padding: 0;
-    background: var(--input);
+    background: var(--caixa-input);
     text-align: center;
     font-weight: bold;
     color: var(--branco);
@@ -123,7 +126,7 @@ body {
     box-sizing: border-box;
     height: 10em;
     padding: 1em;
-    background: var(--tela-resultado);
+    background-color: var(--tela-resultado);
     border-radius: 10px;
     font-size: 1em;
     color: var(--cor-resultado);
@@ -150,7 +153,7 @@ body {
     display: none;
 }
 
-@media (max-width: 500px) {
+@media screen and (max-width: 400px) {
     * {
         margin:0;
         padding: 0;
@@ -162,30 +165,69 @@ body {
     }
 
     .main {
-        width: 100vw;
+        width: 100vh;
         height: 100vh;
-        margin: 5vh 0 0 0;
+        margin:  0;
         padding: 0;
-        font-size: 16px;
     }
 
     .caixa_calculadora {
         border: none;
+        margin: 0;
         border-radius: 0;
         padding: 0;
+        font-size: 12px;
+    }
+
+    .caixa_informativa{
+        width: 100%;
+        height: 1.5em;
+        font-size: 20px;
+        margin: 0 0 0.2em 0;
+
+    }
+
+    .caixa_preencher {
+        display: flex;
+        flex-direction: column;    
+    }
+
+    .box_preencher{
+        width: 100%;
+        height: 3em;
+        background-color: var(--cor-hover);
+        color: var(--branco);
+        margin: 0 0 0.2em 0;
+    }
+
+    .box_preencher:focus {
+        background: var(--branco);
     }
 
     .titulo-pagina {
-        font-size: 26px;
+        font-size: 2em;
+        margin: 0 0 0.8em 0;
+        padding: 0.5em 0 0 0;
     }
 
-    #resposta {
-        margin: 1em 0 0 0;
-        height: 12em;
+    .box_preencher{
+        height: 2em;
+    }
+
+    .caixa_resposta {
+        margin: 0;
+        height: 10em;
+        padding: 0;
+        font-size: 1.2em;
     }
 
     .botao {
-        margin: 1em;
+        margin: 0 0.5em;
     }
 
 }
+
+    .display-none{
+        display: none;
+    }
+
