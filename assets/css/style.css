@@ -5,6 +5,7 @@
     --fundo-pag: var(--fundo-calculadora);
     --cor-texto: black;
     --caixa-texto: var(--branco);
+    --cor-calculadora: var(--fundo-calculadora) ;
     --fundo-calculadora: #040908;
     --cor-hover: #252525;
     --input: var(--fundo-calculadora);
@@ -22,9 +23,9 @@ body {
     margin: 6em 0 0 0;
 }
 
-.calculadora {
-    width: 28em;
-    height: 34em;
+.main {
+    width: 20vw;
+    height: auto;
     font-size: 16px;
 }
 
@@ -36,6 +37,7 @@ body {
     border-radius: 1em;
     text-align: center;
     color: var(--branco);
+    background: var(--cor-calculadora);
 }
 
 .titulo-pagina {
@@ -74,7 +76,7 @@ body {
     width: 50%;
     height: 2.4em;
     padding: 0;
-    background-color: var(--input);
+    background: var(--input);
     text-align: center;
     font-weight: bold;
     color: var(--branco);
@@ -84,7 +86,7 @@ body {
 }
 
 .box_preencher:focus {
-    background-color: var(--cor-hover);
+    background: var(--cor-hover);
 }
 
 .caixa_botao {
@@ -100,7 +102,7 @@ body {
     margin: 0;
     padding: 1em;
     text-transform: uppercase;
-    background-color: var(--cor-hover);
+    background: var(--cor-hover);
     color: var(--branco);
     border-radius: 0.5em;
 }
@@ -121,7 +123,7 @@ body {
     box-sizing: border-box;
     height: 10em;
     padding: 1em;
-    background-color: var(--tela-resultado);
+    background: var(--tela-resultado);
     border-radius: 10px;
     font-size: 1em;
     color: var(--cor-resultado);
@@ -136,7 +138,7 @@ body {
     box-sizing: border-box;
     height: 10em;
     padding: 1em;
-    background-color: var(--tela-resultado);
+    background: var(--tela-resultado);
     border-radius: 10px;
     font-size: 1em;
     color: var(--cor-erro);

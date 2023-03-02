@@ -109,7 +109,6 @@ function calculaDocumentacao() {
         }
 
         if (valorCompra < minimoValorDeCompra) {
-            console.log(valorCompra)
             executaErro()
             resultado(`O valor de compra precisa ser no minimo ${modificaDinheiroReal(minimoValorDeCompra)}`)
         }
@@ -136,7 +135,6 @@ function calculaDocumentacao() {
                     break
 
                 case "caixa":
-
                     telaEnquadramento.classList.remove("display-none")
                     banco.style.backgroundColor = "blue";
                     banco.style.color = "white";
@@ -221,8 +219,4 @@ function calculaDocumentacao() {
 
     calculaRegistro(valorCompra)
     imprimeResultado()
-
-
-
-
 }
