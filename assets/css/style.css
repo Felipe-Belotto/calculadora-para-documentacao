@@ -169,7 +169,7 @@ body {
     display: none;
 }
 
-@media screen and (min-width: 400px) and (max-width: 1200px){
+@media screen and (min-width: 640px) and (max-width: 1200px){
     .main{
         display: flex;
         justify-content: center;
@@ -188,9 +188,13 @@ body {
         margin: 0 0 5vh 0;
         padding: 6vh 0 0 0;
     }
+    
+    .box-select{
+        margin: 1vh 0;
+    }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 640px) {
     * {
         margin:0;
         padding: 0;
@@ -226,7 +230,6 @@ body {
         width: 100%;
         height: 1.5em;
         font-size: 20px;
-        margin: 0;
         background-color: var(--caixa-informativa2);
     }
 
