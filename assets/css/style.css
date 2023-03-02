@@ -201,7 +201,7 @@ body {
     }
 
     .box_preencher:focus {
-        background: var(--branco);
+        background: var(--cor-hover);
     }
 
     .titulo-pagina {
