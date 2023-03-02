@@ -30,7 +30,7 @@ function calculaDocumentacao() {
 
     let minimoValorDeCompra = 62500
 
-    switch (cidade.value) { 
+    switch (cidade.value) {
 
         case "campinas":
             limiteFGTS = 264000
@@ -125,6 +125,9 @@ function calculaDocumentacao() {
 
         else {
 
+            let trocaDisplay = (valor) => { valor.classList.toggle("display-none") }
+            let telaEnquadramento = document.querySelector(".caixa_enquadramento")
+
             switch (banco.value) {
 
                 case "nenhum":
@@ -133,6 +136,8 @@ function calculaDocumentacao() {
                     break
 
                 case "caixa":
+
+                    telaEnquadramento.classList.remove("display-none")
                     banco.style.backgroundColor = "blue";
                     banco.style.color = "white";
 
@@ -174,6 +179,8 @@ function calculaDocumentacao() {
                     break
 
                 case "bb":
+
+                    telaEnquadramento.classList.remove("display-none")
                     banco.style.backgroundColor = "#EEAD2D";
                     banco.style.color = "#010158";
 
@@ -193,6 +200,11 @@ function calculaDocumentacao() {
                     break
 
                 case "itau":
+
+                    if (!telaEnquadramento.classList.contains("display-none")) {
+                        telaEnquadramento.classList.add("display-none")
+                    }
+
                     banco.style.backgroundColor = "#D75413";
                     banco.style.color = "#010158";
 
