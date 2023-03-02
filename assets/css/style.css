@@ -9,7 +9,7 @@
     --fundo-calculadora: #040908;
     --cor-hover: #252525;
     --caixa-informativa: var(--fundo-calculadora);
-    --caixa-informativa2: gray;
+    --caixa-informativa2: var(--fundo-calculadora);
     --caixa-input: var(--fundo-calculadora);
     --tela-resultado: var(--branco);
     --cor-resultado: var(--cor-texto);
