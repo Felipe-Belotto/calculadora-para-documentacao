@@ -30,7 +30,7 @@ function calculaDocumentacao() {
 
     let minimoValorDeCompra = 62500
 
-    switch (cidade.value) {
+    switch (cidade.value) { 
 
         case "campinas":
             limiteFGTS = 264000
