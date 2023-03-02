@@ -250,6 +250,7 @@ body {
         color: var(--cor-texto);
         margin: 0 0 0.2em 0;
         padding: 0 0 0 1em;
+        border: 0.5px var(--caixa-informativa2) solid;
     }
 
     .box-input:focus {
