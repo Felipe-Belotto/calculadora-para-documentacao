@@ -2,7 +2,14 @@
 let calcular = document.getElementById("conteudo_tela")
 calcular.addEventListener('input', calculaDocumentacao)
 
-let botaoRecarregar = document.getElementById("botaoRecarregar");
+let botaoCopiar = document.getElementById('botaoCopiar')
+
+botaoCopiar.addEventListener('click', function () {
+    let valoresDocumentacao = document.getElementById('resposta')
+    navigator.clipboard.writeText(valoresDocumentacao.textContent)
+})
+
+let botaoRecarregar = document.getElementById("botaoRecarregar")
 
 botaoRecarregar.addEventListener('click', function () {
     location.reload();
@@ -83,9 +90,10 @@ function calculaDocumentacao() {
 
     function imprimeResultado() {
 
+        botaoCopiar.style.display = "block"
         botaoRecarregar.style.display = "block"
         resposta.style.display = "flex";
-        
+
         maximoFinanciamento = valorCompra * 0.8
 
         resultado = (valor) => { resposta.innerHTML = valor }
@@ -107,7 +115,7 @@ function calculaDocumentacao() {
         }
 
         else {
-        resultado("preencha todos os dados")
+            resultado("preencha todos os dados")
         }
 
         if (financiamento > maximoFinanciamento) {
@@ -117,82 +125,82 @@ function calculaDocumentacao() {
 
         else {
 
-        switch (banco.value) {
+            switch (banco.value) {
 
-            case "nenhum":
-                executaErro()
-                resultado("Preencha todos os campos")
-                break
+                case "nenhum":
+                    executaErro()
+                    resultado("Preencha todos os campos")
+                    break
 
-            case "caixa":
-                banco.style.backgroundColor = "blue";
-                banco.style.color = "white";
+                case "caixa":
+                    banco.style.backgroundColor = "blue";
+                    banco.style.color = "white";
 
-                switch (enquadramento.value) {
+                    switch (enquadramento.value) {
 
-                    case "mcmv":
+                        case "mcmv":
+                            if (valorCompra > limiteFGTS) {
+                                executaErro()
+                                resultado(" O valor do imóvel está acima do limite (MCMV)")
+                            }
+                            else {
+                                validaErro()
+                                resultado(
+                                    `TAXA A VISTA: ${modificaDinheiroReal(vistoria)} `
+                                    + `<br>` + `RELACIONAMENTO: ${modificaDinheiroReal(relacionamento)} `
+                                    + `<br>` + `ITBI: ${modificaDinheiroReal(itbi)} `
+                                    + `<br>` + `REGISTRO: ${modificaDinheiroReal(registro)} `)
+                            }
+                            break
+
+                        case "pro_cotista":
+                            validaErro()
+                            resultado(
+                                `TAXA A VISTA: ${modificaDinheiroReal(vistoria)} `
+                                + `<br>` + `RELACIONAMENTO: ${modificaDinheiroReal(relacionamento)} `
+                                + `<br>` + `ITBI: ${modificaDinheiroReal(itbi)} `
+                                + `<br>` + `REGISTRO: ${modificaDinheiroReal(registro)} `)
+                            break
+
+                        case "sbpe":
+                            validaErro()
+                            resultado(
+                                `TAXA A VISTA: ${modificaDinheiroReal(vistoria)} `
+                                + `<br>` + `RELACIONAMENTO: ${modificaDinheiroReal(relacionamento)} `
+                                + `<br>` + `ITBI: ${modificaDinheiroReal(itbi)} `
+                                + `<br>` + `REGISTRO: ${modificaDinheiroReal(registro)} `)
+                            break
+                    }
+                    break
+
+                case "bb":
+                    banco.style.backgroundColor = "#EEAD2D";
+                    banco.style.color = "#010158";
+
+                    if (enquadramento.value == "mcmv") {
                         if (valorCompra > limiteFGTS) {
                             executaErro()
                             resultado(" O valor do imóvel está acima do limite (MCMV)")
                         }
+
                         else {
                             validaErro()
-                            resultado(
-                                `TAXA A VISTA: ${modificaDinheiroReal(vistoria)} `
-                                + `<br>` + `RELACIONAMENTO: ${modificaDinheiroReal(relacionamento)}`
+                            resultado(`TAXA A VISTA: ${modificaDinheiroReal(vistoria)} `
                                 + `<br>` + `ITBI: ${modificaDinheiroReal(itbi)}`
-                                + `<br>` + `REGISTRO: ${modificaDinheiroReal(registro)}`)
+                                + `<br>` + `REGISTRO: ${modificaDinheiroReal(registro)} `)
                         }
-                        break
-
-                    case "pro_cotista":
-                        validaErro()
-                        resultado(
-                            `TAXA A VISTA: ${modificaDinheiroReal(vistoria)} `
-                            + `<br>` + `RELACIONAMENTO: ${modificaDinheiroReal(relacionamento)}`
-                            + `<br>` + `ITBI: ${modificaDinheiroReal(itbi)}`
-                            + `<br>` + `REGISTRO: ${modificaDinheiroReal(registro)}`)
-                        break
-
-                    case "sbpe":
-                        validaErro()
-                        resultado(
-                            `TAXA A VISTA: ${modificaDinheiroReal(vistoria)} `
-                            + `<br>` + `RELACIONAMENTO: ${modificaDinheiroReal(relacionamento)}`
-                            + `<br>` + `ITBI: ${modificaDinheiroReal(itbi)}`
-                            + `<br>` + `REGISTRO: ${modificaDinheiroReal(registro)}`)
-                            break
-                        }
-            break
-               
-            case "bb":
-                banco.style.backgroundColor = "#EEAD2D";
-                banco.style.color = "#010158";
-
-                if (enquadramento.value == "mcmv") {
-                    if (valorCompra > limiteFGTS) {
-                        executaErro()
-                        resultado(" O valor do imóvel está acima do limite (MCMV)")
                     }
+                    break
 
-                    else {
-                        validaErro()
-                        resultado(`TAXA A VISTA: ${modificaDinheiroReal(vistoria)} `
-                            + `<br>` + `ITBI: ${modificaDinheiroReal(itbi)}`
-                            + `<br>` + `REGISTRO: ${modificaDinheiroReal(registro)}`)
-                    }
-                }
-                break
+                case "itau":
+                    banco.style.backgroundColor = "#D75413";
+                    banco.style.color = "#010158";
 
-            case "itau":
-                banco.style.backgroundColor = "#D75413";
-                banco.style.color = "#010158";
-
-                validaErro()
-                resultado(`TAXA A VISTA: ${modificaDinheiroReal(vistoria)} `
-                    + `<br>` + `ITBI: ${modificaDinheiroReal(itbi)}`
-                    + `<br>` + `REGISTRO: ${modificaDinheiroReal(registro)}`)
-                break
+                    validaErro()
+                    resultado(`TAXA A VISTA: ${modificaDinheiroReal(vistoria)} `
+                        + `<br>` + `ITBI: ${modificaDinheiroReal(itbi)} `
+                        + `<br>` + `REGISTRO: ${modificaDinheiroReal(registro)} `)
+                    break
             }
 
         }
@@ -201,4 +209,8 @@ function calculaDocumentacao() {
 
     calculaRegistro(valorCompra)
     imprimeResultado()
+
+
+
+
 }

@@ -108,6 +108,10 @@ body {
     display: none;
 }
 
+#botaoCopiar {
+    display: none;
+}
+
 .caixa_resposta {
     display: none;
     flex-wrap: wrap;
