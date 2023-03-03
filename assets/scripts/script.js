@@ -52,7 +52,7 @@ function calculaDocumentacao() {
                     break
                 case "pro_cotista": vistoria = financiamento * 0.015
                     break
-                case "sbpe": vistoria = 1000
+                case "sbpe": vistoria = 1050
                     break
             }
             break
