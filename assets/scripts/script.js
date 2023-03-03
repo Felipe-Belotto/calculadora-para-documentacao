@@ -40,7 +40,7 @@ function calculaDocumentacao() {
 
         case "guarulhos":
             limiteFGTS = 264000
-            relacionamento = 500
+            relacionamento = 800
             itbi = (financiamento * 0.005) + (recursosProprios * 0.02)
             break
     }
@@ -52,7 +52,7 @@ function calculaDocumentacao() {
                     break
                 case "pro_cotista": vistoria = financiamento * 0.015
                     break
-                case "sbpe": vistoria = 955
+                case "sbpe": vistoria = 1000
                     break
             }
             break
@@ -188,14 +188,31 @@ function calculaDocumentacao() {
                             resultado(" O valor do imóvel está acima do limite (MCMV)")
                         }
 
-                        else {
+                        aelse {
+                            validaErro()
+                            resultado(`TAXA A VISTA: ${modificaDinheiroReal(vistoria)} `
+                                + `<br>` + `ITBI: ${modificaDinheiroReal(itbi)}`
+                                + `<br>` + `REGISTRO: ${modificaDinheiroReal(registro)} `)
+                    }
+                }
+
+                    if (enquadramento.value == "pro_cotista") {
                             validaErro()
                             resultado(`TAXA A VISTA: ${modificaDinheiroReal(vistoria)} `
                                 + `<br>` + `ITBI: ${modificaDinheiroReal(itbi)}`
                                 + `<br>` + `REGISTRO: ${modificaDinheiroReal(registro)} `)
                         }
+                    
+
+                    if (enquadramento.value == "sbpe") {
+                        validaErro()
+                        resultado(`TAXA A VISTA: ${modificaDinheiroReal(vistoria)} `
+                            + `<br>` + `ITBI: ${modificaDinheiroReal(itbi)}`
+                            + `<br>` + `REGISTRO: ${modificaDinheiroReal(registro)} `)
                     }
+               
                     break
+               
 
                 case "itau":
 
