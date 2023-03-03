@@ -188,7 +188,7 @@ function calculaDocumentacao() {
                             resultado(" O valor do imóvel está acima do limite (MCMV)")
                         }
 
-                        aelse {
+                        else {
                             validaErro()
                             resultado(`TAXA A VISTA: ${modificaDinheiroReal(vistoria)} `
                                 + `<br>` + `ITBI: ${modificaDinheiroReal(itbi)}`
