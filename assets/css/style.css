@@ -274,11 +274,11 @@ body {
     }
 
     .box-input:focus {
-        background: var(--branco);
+        background: var(--fundo-calculadora);
     }
 
     .box-select:focus {
-        background: var(--branco);
+        background: var(--fundo-calculadora);
     }
 
     .titulo-pagina {
