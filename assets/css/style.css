@@ -262,7 +262,6 @@ body {
         background-color: var(--fundo-input2);
         color: var(--cor-texto);
         margin: 0 0 0.2em 0;
-        padding: 0 0 0 1em;
     }
 
     .box-select{
@@ -298,8 +297,10 @@ body {
     }
 
     .caixa_resposta {
-        margin: 0;
+       align-self: center;
+        width: 90%;
         height: 10em;
+        margin: 0;
         padding: 0;
         font-size: 1.2em;
         color: var(--cor-resultado);
