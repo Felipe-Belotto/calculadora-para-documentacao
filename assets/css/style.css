@@ -20,7 +20,8 @@
     --caixa-informativa2: #0c0c0c96;
     --botao2: #2e313a ;
     --botao-texto2: white ;
-    --fundo-input2: #15141474 ;
+    --fundo-input2: #2f2c2c74 ;
+    --cor-hover2: rgba(128, 128, 128, 0.294) ;
 }
 
 body {
@@ -244,7 +245,7 @@ body {
     }
 
     .caixa_informativa{
-        width: 100%;
+        width: 90%;
         height: 1.5em;
         font-size: 20px;
         background-color: var(--caixa-informativa2);
@@ -256,15 +257,16 @@ body {
     }
 
     .box-input{
-        width: 100%;
+        width: 86%;
         height: 3em;
         background-color: var(--fundo-input2);
         color: var(--cor-texto);
         margin: 0 0 0.2em 0;
+        padding: 0 0 0 1em;
     }
 
     .box-select{
-        width: 100%;
+        width: 90%;
         height: 2em;
         background-color: var(--fundo-input2);
         color: var(--cor-texto);
@@ -274,11 +276,11 @@ body {
     }
 
     .box-input:focus {
-        background: var(--fundo-calculadora);
+        background: var(--cor-hover2);
     }
 
     .box-select:focus {
-        background: var(--fundo-calculadora);
+        background: var(--cor-hover2);
     }
 
     .titulo-pagina {
