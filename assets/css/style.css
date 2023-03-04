@@ -245,8 +245,9 @@ body {
     }
 
     .caixa_informativa{
-        width: 90%;
+        width: 95%;
         height: 1.5em;
+        border-radius: 0.4em;
         font-size: 20px;
         background-color: var(--caixa-informativa2);
     }
@@ -276,11 +277,16 @@ body {
 
     .box-input:focus {
         background: var(--cor-hover2);
+        transform: scale(1.2);
+        border: 0.5px var(--caixa-calculadora2) solid;
     }
 
     .box-select:focus {
         background: var(--cor-hover2);
+        transform: scale(1.2);
+        border: 0.5px var(--caixa-calculadora2) solid;
     }
+
 
     .titulo-pagina {
         font-size: 2em;
