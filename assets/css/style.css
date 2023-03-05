@@ -279,14 +279,16 @@ body {
 
     .box-input:focus {
         background: var(--cor-hover2);
-        transform: scale(1.2);
+        transform: scale(1.1);
         border: 0.5px var(--caixa-calculadora2) solid;
+        border-radius: 1em;
     }
 
     .box-select:focus {
         background: var(--cor-hover2);
-        transform: scale(1.2);
+        transform: scale(1.1);
         border: 0.5px var(--caixa-calculadora2) solid;
+        border-radius: 1em;
     }
 
 
