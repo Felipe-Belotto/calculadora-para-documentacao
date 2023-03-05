@@ -247,7 +247,7 @@ body {
     .caixa_informativa{
         width: 95%;
         height: 1.5em;
-        border-radius: 0.4em;
+        border-radius: 1em 1em 0.5em 0.5em;
         font-size: 20px;
         background-color: var(--caixa-informativa2);
     }
@@ -259,20 +259,22 @@ body {
 
     .box-input{
         width: 90%;
-        height: 3em;
-        background-color: var(--fundo-input2);
-        color: var(--cor-texto);
-        margin: 0;      
-    }
-
-    .box-select{
-        width: 90%;
         height: 2em;
         background-color: var(--fundo-input2);
         color: var(--cor-texto);
-        margin: 0 0 0.2em 0;
+        margin: 0;     
+        padding: 0 0 0 1em; 
+        border-radius: 0 0 1em 1em;
+    }
+
+    .box-select{
+        width: 93%;
+        height: 2em;
+        background-color: var(--fundo-input2);
+        color: var(--cor-texto);
         padding: 0 0 0 1em;
         border: 0.5px var(--caixa-informativa2) solid;
+        border-radius: 0 0 1em 1em;
     }
 
     .box-input:focus {
@@ -291,15 +293,6 @@ body {
     .titulo-pagina {
         font-size: 2em;
         padding: 6vh 0 4vh 0;
-    }
-
-    .box-input{
-        height: 2em;
-        
-    }
-
-    .box-select{
-       margin: 0;
     }
 
     .caixa_resposta {
