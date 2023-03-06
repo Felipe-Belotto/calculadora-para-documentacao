@@ -124,7 +124,6 @@ function calculaDocumentacao() {
 
         else {
 
-            let trocaDisplay = (valor) => { valor.classList.toggle("display-none") }
             let telaEnquadramento = document.querySelector(".caixa_enquadramento")
 
             switch (banco.value) {
