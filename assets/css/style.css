@@ -110,7 +110,7 @@ body {
 .box-select {
     width: 50%;
     height: 2.4em;
-    padding: 0;
+    padding: 0 1em 0 0;
     background: var(--caixa-input);
     text-align: center;
     font-weight: bold;
@@ -119,6 +119,7 @@ body {
     border-radius: 1em;
     transition: 1s ease;
     outline: none;
+    appearance: none;
 }
 
 .box-input:focus {
