@@ -48,9 +48,9 @@ function calculaDocumentacao() {
     switch (banco.value) {
         case "caixa":
             switch (enquadramento.value) {
-                case "mcmv": vistoria = financiamento * 0.015
+                case "mcmv": vistoria = (financiamento * 0.015) + 50
                     break
-                case "pro_cotista": vistoria = financiamento * 0.015
+                case "pro_cotista": vistoria = (financiamento * 0.015) + 50
                     break
                 case "sbpe": vistoria = 1050
                     break
