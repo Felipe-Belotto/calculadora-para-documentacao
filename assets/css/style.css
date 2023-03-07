@@ -39,7 +39,7 @@ body {
 }
 
 .main{
-    width: 30vw;
+    width: 38vw;
 }
 
 .caixa_calculadora {
@@ -204,7 +204,7 @@ body {
     }
 
     .caixa_calculadora {
-        width: 50%;
+        width: 80%;
         margin: 0;
     }
 
