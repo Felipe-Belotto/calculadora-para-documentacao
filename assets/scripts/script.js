@@ -40,7 +40,7 @@ function calculaDocumentacao() {
 
         case "guarulhos":
             limiteFGTS = 264000
-            relacionamento = 800
+            relacionamento = 500
             itbi = (financiamento * 0.005) + (recursosProprios * 0.02)
             break
     }
