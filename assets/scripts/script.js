@@ -6,6 +6,7 @@ class Documentacao {
         this.agenciaValores = []
         this.cartorioValores = [] 
         this.enquadramentoValores = []
+        this.documentacaoValores = []
     }
 
     lerDados(){
@@ -21,6 +22,7 @@ class Documentacao {
      this.verificaAgencia()
      this.verificaRegistro()
      this.verificaEnquadramento()
+     this.verificaExecucoes()
     }
 
     verificaCidade(){
@@ -37,8 +39,6 @@ class Documentacao {
         this.cidadeValores.itbi = (0.02 * this.valor.recursosProprios) + (0.005 * this.valor.financiamento)
         break
     }
-
-        console.log(this.cidadeValores)
     }
 
     verificaAgencia(){
@@ -53,7 +53,6 @@ class Documentacao {
         this.agenciaValores.relacionamento = 800  
         break 
     }
-    console.log(this.agenciaValores)
     }
 
     verificaRegistro(){
@@ -66,26 +65,96 @@ class Documentacao {
              this.cartorioValores.registro = this.cartorioValores.referenciaValor[i]
         }
     }
-    console.log(this.cartorioValores)
     }
 
     verificaEnquadramento(){
 
+        let telaEnquadramento = document.querySelector(".caixa_enquadramento")
+        telaEnquadramento.classList.remove("display-none")
+
+        switch(this.valor.banco){
+    
+        case "caixa":
         switch(this.valor.enquadramento){
 
-            case "mcmv": 
-            this.enquadramentoValores.taxa = (this.valor.financiamento * 0.015) + 50
-            break
-
-            case "proCotista": 
+            case "mcmv" || "proCotista": 
             this.enquadramentoValores.taxa = (this.valor.financiamento * 0.015) + 50
             break
 
             case "sbpe": 
             this.enquadramentoValores.taxa = 1050
+            break   
+        }    
+
+        case "bb":
+
+        switch(this.valor.enquadramento){
+            
+
+            case "mcmv" || "proCotista": 
+            this.enquadramentoValores.taxa = (this.valor.financiamento * 0.015) + 50
             break
+
+            case "sbpe": 
+            this.enquadramentoValores.taxa = 1365
+            break   
         }
-        console.log(this.enquadramentoValores)
+        
+        case "itau":
+        
+        if(this.valor.enquadramento == "nenhum"){
+            this.enquadramentoValores.taxa = 1950
+        }
+
+        else{
+            resultado(" No Itau não há outros enquadramentos ")
+        }
+
+        }
+    }
+
+    verificaExecucoes(){
+
+    this.documentacaoValores.taxa = this.enquadramentoValores.taxa 
+    this.documentacaoValores.relacionamento = this.agenciaValores.relacionamento
+    this.documentacaoValores.itbi = this.cidadeValores.itbi
+    this.documentacaoValores.registro = this.cartorioValores.registro
+
+    let resposta = window.document.getElementById('resposta')
+    let resultado = (valor) => { resposta.innerHTML = valor}
+    let modificaDinheiroReal = (valor) => { return valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }); }
+
+
+    function executaErro() {
+        resposta.classList.remove('caixa_reposta')
+        resposta.classList.add('resposta_erro')
+    }
+
+    function validaErro() {
+        resposta.classList.remove('resposta_erro')
+        resposta.classList.add('caixa_reposta')
+    }
+
+    botaoCopiar.style.display = "block"
+    botaoRecarregar.style.display = "block"
+    resposta.style.display = "flex";
+
+    if(this.valor.compra < 62000){
+        executaErro()
+        resultado("Valor de compra e venda inferior ao minimo " + modificaDinheiroReal(62000))
+    }
+
+    else if (this.valor.compra * 0.8 < this.valor.financiamento){
+        executaErro()
+        resultado("Valor de financiamento maior do que 80% do valor de compra,<br> valor possivel: " + modificaDinheiroReal(this.valor.compra * 0.8))
+    }
+
+    else {
+       
+
+    }
+
+    console.log(this.documentacaoValores)
     }
 
 
