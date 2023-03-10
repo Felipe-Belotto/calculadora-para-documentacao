@@ -9,7 +9,7 @@ class Documentacao {
         this.documentacaoValores = []
     }
 
-    lerDados(){
+    lerDados() {
         this.valor.compra = document.getElementById('compra').valueAsNumber
         this.valor.financiamento = document.getElementById('financiamento').valueAsNumber
         this.valor.recursosProprios = (this.valor.compra) - (this.valor.financiamento)
@@ -44,32 +44,32 @@ class Documentacao {
     verificaAgencia() {
 
         let telaAgencia = document.querySelector('.caixa_agencia')
-        switch(this.valor.banco){
+        switch (this.valor.banco) {
 
-        case "caixa":
-        telaAgencia.classList.remove("display-none")
-        switch (this.valor.agencia) {
+            case "caixa":
+                telaAgencia.classList.remove("display-none")
+                switch (this.valor.agencia) {
 
-            case "0676":
-                this.agenciaValores.relacionamento = 1500
+                    case "0676":
+                        this.agenciaValores.relacionamento = 1500
+                        break
+
+                    case "3231":
+                        this.agenciaValores.relacionamento = 800
+                        break
+                }
                 break
 
-            case "3231":
-                this.agenciaValores.relacionamento = 800
+            case "bb":
+                telaAgencia.classList.add("display-none")
                 break
+
+            case "itau":
+                telaAgencia.classList.add("display-none")
+                break
+
         }
-        break
-        
-        case "bb":
-        telaAgencia.classList.add("display-none")
-        break
-
-        case "itau":
-        telaAgencia.classList.add("display-none")
-        break
-        
     }
-}
 
     verificaRegistro() {
         this.lerDados
@@ -87,7 +87,7 @@ class Documentacao {
 
         let telaEnquadramento = document.querySelector(".caixa_enquadramento")
         telaEnquadramento.classList.remove("display-none")
-        
+
         switch (this.valor.banco) {
 
             case "caixa":
@@ -171,68 +171,65 @@ class Documentacao {
             resultado("Valor de financiamento maior do que 80% do valor de compra,<br> valor possivel: " + modificaDinheiroReal(this.valor.compra * 0.8))
         }
 
-        else if(this.valor.cidade == "nenhum" || this.valor.banco == "nenhum"){
+        else if (this.valor.cidade == "nenhum" || this.valor.banco == "nenhum") {
             executaErro()
             resultado("Preencha todos os campos")
         }
 
         else {
             validaErro()
-            switch(this.valor.banco){
+            switch (this.valor.banco) {
                 case "caixa":
-                resultado(
-                    `Taxa a vista: ${modificaDinheiroReal(this.documentacaoValores.taxa)} `  +
-                    `<br>Relacionamento ${modificaDinheiroReal(this.documentacaoValores.relacionamento)} `+ 
-                    `<br>ITBI: ${modificaDinheiroReal(this.documentacaoValores.itbi)} ` +
-                    `<br>Registro: ${modificaDinheiroReal(this.documentacaoValores.registro)} `
+                    resultado(
+                        `Taxa a vista: ${modificaDinheiroReal(this.documentacaoValores.taxa)} ` +
+                        `<br>Relacionamento ${modificaDinheiroReal(this.documentacaoValores.relacionamento)} ` +
+                        `<br>ITBI: ${modificaDinheiroReal(this.documentacaoValores.itbi)} ` +
+                        `<br>Registro: ${modificaDinheiroReal(this.documentacaoValores.registro)} `
                     )
-                break
+                    break
 
                 case "bb":
-                resultado(
-                    `Taxa a vista: ${modificaDinheiroReal(this.documentacaoValores.taxa)} `  + 
-                    `<br>ITBI: ${modificaDinheiroReal(this.documentacaoValores.itbi)} ` +
-                    `<br>Registro: ${modificaDinheiroReal(this.documentacaoValores.registro)} `
+                    resultado(
+                        `Taxa a vista: ${modificaDinheiroReal(this.documentacaoValores.taxa)} ` +
+                        `<br>ITBI: ${modificaDinheiroReal(this.documentacaoValores.itbi)} ` +
+                        `<br>Registro: ${modificaDinheiroReal(this.documentacaoValores.registro)} `
                     )
-                break
+                    break
 
                 case "itau":
-                resultado(
-                    `Taxa a vista: ${modificaDinheiroReal(this.documentacaoValores.taxa)} `  + 
-                    `<br>ITBI: ${modificaDinheiroReal(this.documentacaoValores.itbi)} ` +
-                    `<br>Registro: ${modificaDinheiroReal(this.documentacaoValores.registro)} `
+                    resultado(
+                        `Taxa a vista: ${modificaDinheiroReal(this.documentacaoValores.taxa)} ` +
+                        `<br>ITBI: ${modificaDinheiroReal(this.documentacaoValores.itbi)} ` +
+                        `<br>Registro: ${modificaDinheiroReal(this.documentacaoValores.registro)} `
                     )
-                break
+                    break
             }
         }
     }
-    
 }
 
 let documentacao = new Documentacao();
-
 // Adiciona um listener de eventos a cada campo de entrada
 document.getElementById('compra').addEventListener('change', () => {
     documentacao.lerDados();
-  });
-  document.getElementById('financiamento').addEventListener('change', () => {
+});
+document.getElementById('financiamento').addEventListener('change', () => {
     documentacao.lerDados();
-  });
-  document.getElementById('cidade').addEventListener('change', () => {
+});
+document.getElementById('cidade').addEventListener('change', () => {
     documentacao.lerDados();
-  });
-  document.getElementById('banco').addEventListener('change', () => {
+});
+document.getElementById('banco').addEventListener('change', () => {
     documentacao.lerDados();
-  });
-  document.getElementById('agencia').addEventListener('change', () => {
+});
+document.getElementById('agencia').addEventListener('change', () => {
     documentacao.lerDados();
-  });
-  document.getElementById('enquadramento').addEventListener('change', () => {
+});
+document.getElementById('enquadramento').addEventListener('change', () => {
     documentacao.lerDados();
-  });
+});
 
-  //Botões
-
+//Botões
 let botaoCopiar = document.getElementById('botaoCopiar')
 botaoCopiar.addEventListener('click', function () {
     let valoresDocumentacao = document.getElementById('resposta')
@@ -243,9 +240,3 @@ let botaoRecarregar = document.getElementById("botaoRecarregar")
 botaoRecarregar.addEventListener('click', function () {
     location.reload();
 });
-
-
-
-
-  
-  
