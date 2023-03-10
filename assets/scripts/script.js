@@ -26,17 +26,28 @@ class Documentacao {
     }
 
     verificaCidade() {
+        let option0676 = document.getElementById('0676')
+        let option3231 = document.getElementById('3231')
 
         switch (this.valor.cidade) {
 
             case "campinas":
                 this.cidadeValores.limiteFGTS = 264000
                 this.cidadeValores.itbi = this.valor.compra * 0.027
+
+                if(this.valor.cidade == "campinas"){
+                option0676.classList.remove("display-none")
+                option3231.classList.add("display-none")
+                }
                 break
 
             case "guarulhos":
                 this.cidadeValores.limiteFGTS = 264000
                 this.cidadeValores.itbi = (0.02 * this.valor.recursosProprios) + (0.005 * this.valor.financiamento)
+                if(this.valor.cidade == "guarulhos"){
+                option3231.classList.remove("display-none")
+                option0676.classList.add("display-none")
+                }
                 break
         }
     }
