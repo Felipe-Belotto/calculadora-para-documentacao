@@ -11,7 +11,7 @@
 
 <body>
     <!-- Inicio da calculadora -->
-    <section class="main">
+    <main>
         <div class="caixa_calculadora" id="calculadora">
             <h1 class="titulo-pagina">Calculadora <br> de documentação</h1>
 
@@ -47,12 +47,20 @@
                     </select>
                 </div>
 
-                <div class="caixa_enquadramento caixa_preencher display-none">
+                <div class="caixa_agencia caixa_preencher">
+                    <p class="caixa_informativa">Agência</p>
+                    <select id="agencia" class="box-select">
+                        <option value="0676">Conceição</option>
+                        <option value="3231">Bom Sucesso</option>
+                    </select>
+                </div>
+
+                <div class="caixa_enquadramento caixa_preencher ">
                     <p class="caixa_informativa informativa-enquadramento">Enquadramento</p>
                     <select id="enquadramento" class="box-select">
                         <option value="nenhum"></option>
                         <option value="mcmv">MCMV</option>
-                        <option value="pro_cotista">Pró cotista</option>
+                        <option value="proCotista">Pró cotista</option>
                         <option value="sbpe">SBPE</option>
                     </select>
                 </div>
@@ -70,7 +78,7 @@
                 <script src="assets/scripts/script.js"></script>
             </div>
         </div>
-    </section>       
+    </main>       
         <!-- Final da calculadora -->
 </body>
 

@@ -38,7 +38,7 @@ body {
     
 }
 
-.main{
+main{
     width: 38vw;
 }
 
@@ -195,7 +195,7 @@ body {
 }
 
 @media screen and (min-width: 640px) and (max-width: 1200px){
-    .main{
+    main{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -236,7 +236,7 @@ body {
         margin: 0;
     }
 
-    .main {
+    main {
         width: 100vh;
         height: 100vh;
         margin:  0;
