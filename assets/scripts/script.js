@@ -43,6 +43,11 @@ class Documentacao {
 
     verificaAgencia() {
 
+        let telaAgencia = document.querySelector('.caixa_agencia')
+        switch(this.valor.banco){
+
+        case "caixa":
+        telaAgencia.classList.remove("display-none")
         switch (this.valor.agencia) {
 
             case "0676":
@@ -53,7 +58,18 @@ class Documentacao {
                 this.agenciaValores.relacionamento = 800
                 break
         }
+        break
+        
+        case "bb":
+        telaAgencia.classList.add("display-none")
+        break
+
+        case "itau":
+        telaAgencia.classList.add("display-none")
+        break
+        
     }
+}
 
     verificaRegistro() {
         this.lerDados
