@@ -259,8 +259,9 @@ main{
     .titulo-pagina{
         background-color: var(--titulo-pagina2);
         margin:0;
-        padding: 3vh 0 0 0;
-        font-size: 2.5em;
+        font-size: 2em;
+        font-size: 2em;
+        padding: 2vh 0;
         color: var(--titulo-texto2);
     }
 
@@ -282,7 +283,7 @@ main{
         height: 2em;
         background-color: var(--fundo-input2);
         color: var(--cor-texto);
-        margin: 0 0 1em 0;     
+        margin: 0 0 0.5em 0;     
         border-radius: 0 0 1em 1em;
     }
 
@@ -309,12 +310,6 @@ main{
         transform: scale(1.1);
         border: 0.5px var(--caixa-calculadora2) solid;
         border-radius: 1em;
-    }
-
-
-    .titulo-pagina {
-        font-size: 2em;
-        padding: 1vh 0;
     }
 
     .caixa_resposta {
