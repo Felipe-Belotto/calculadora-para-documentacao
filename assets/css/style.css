@@ -243,6 +243,10 @@ main{
         padding: 0;
     }
 
+    .preencher_conteudo{
+        padding: 0 1em 0 1em;
+    }
+
     .caixa_calculadora {
         border: none;
         margin: 0 ;

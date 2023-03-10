@@ -171,7 +171,13 @@ class Documentacao {
             resultado("Valor de financiamento maior do que 80% do valor de compra,<br> valor possivel: " + modificaDinheiroReal(this.valor.compra * 0.8))
         }
 
+        else if(this.valor.cidade == "nenhum" || this.valor.banco == "nenhum"){
+            executaErro()
+            resultado("Preencha todos os campos")
+        }
+
         else {
+            validaErro()
             switch(this.valor.banco){
                 case "caixa":
                 resultado(
@@ -205,4 +211,24 @@ class Documentacao {
 
 let documentacao = new Documentacao();
 
-    
+// Adiciona um listener de eventos a cada campo de entrada
+document.getElementById('compra').addEventListener('change', () => {
+    documentacao.lerDados();
+  });
+  document.getElementById('financiamento').addEventListener('change', () => {
+    documentacao.lerDados();
+  });
+  document.getElementById('cidade').addEventListener('change', () => {
+    documentacao.lerDados();
+  });
+  document.getElementById('banco').addEventListener('change', () => {
+    documentacao.lerDados();
+  });
+  document.getElementById('agencia').addEventListener('change', () => {
+    documentacao.lerDados();
+  });
+  document.getElementById('enquadramento').addEventListener('change', () => {
+    documentacao.lerDados();
+  });
+  
+  
