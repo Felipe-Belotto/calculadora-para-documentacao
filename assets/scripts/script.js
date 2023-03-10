@@ -1,16 +1,3 @@
-
-let botaoCopiar = document.getElementById('botaoCopiar')
-botaoCopiar.addEventListener('click', function () {
-    let valoresDocumentacao = document.getElementById('resposta')
-    navigator.clipboard.writeText(valoresDocumentacao.textContent)
-})
-
-let botaoRecarregar = document.getElementById("botaoRecarregar")
-botaoRecarregar.addEventListener('click', function () {
-    location.reload();
-});
-
-
 class Documentacao {
 
     constructor() {
@@ -243,6 +230,21 @@ document.getElementById('compra').addEventListener('change', () => {
   document.getElementById('enquadramento').addEventListener('change', () => {
     documentacao.lerDados();
   });
+
+  //Botões
+
+let botaoCopiar = document.getElementById('botaoCopiar')
+botaoCopiar.addEventListener('click', function () {
+    let valoresDocumentacao = document.getElementById('resposta')
+    navigator.clipboard.writeText(valoresDocumentacao.textContent)
+})
+
+let botaoRecarregar = document.getElementById("botaoRecarregar")
+botaoRecarregar.addEventListener('click', function () {
+    location.reload();
+});
+
+
 
 
   
