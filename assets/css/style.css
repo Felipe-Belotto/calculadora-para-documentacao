@@ -115,7 +115,7 @@ main{
     text-align: center;
     font-weight: bold;
     color: var(--branco);
-    border: 1px var(--caixa-borda) solid;
+    border: 0.5px var(--caixa-borda) solid;
     border-radius: 1em;
     transition: 1s ease;
     outline: none;
