@@ -9,7 +9,7 @@ class Documentacao {
         this.documentacaoValores = []
     }
 
-    lerDados() {
+    lerDados(){
         this.valor.compra = document.getElementById('compra').valueAsNumber
         this.valor.financiamento = document.getElementById('financiamento').valueAsNumber
         this.valor.recursosProprios = (this.valor.compra) - (this.valor.financiamento)
@@ -87,7 +87,7 @@ class Documentacao {
 
         let telaEnquadramento = document.querySelector(".caixa_enquadramento")
         telaEnquadramento.classList.remove("display-none")
-        console.log(this.valor.banco)
+        
         switch (this.valor.banco) {
 
             case "caixa":
@@ -199,13 +199,10 @@ class Documentacao {
                 break
             }
         }
-
-
     }
-
-
+    
 }
 
-
-
 let documentacao = new Documentacao();
+
+    
