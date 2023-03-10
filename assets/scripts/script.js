@@ -1,3 +1,16 @@
+
+let botaoCopiar = document.getElementById('botaoCopiar')
+botaoCopiar.addEventListener('click', function () {
+    let valoresDocumentacao = document.getElementById('resposta')
+    navigator.clipboard.writeText(valoresDocumentacao.textContent)
+})
+
+let botaoRecarregar = document.getElementById("botaoRecarregar")
+botaoRecarregar.addEventListener('click', function () {
+    location.reload();
+});
+
+
 class Documentacao {
 
     constructor() {
@@ -181,26 +194,26 @@ class Documentacao {
             switch(this.valor.banco){
                 case "caixa":
                 resultado(
-                    "Taxa a vista: " + modificaDinheiroReal(this.documentacaoValores.taxa) +
-                    "<br>Relacionamento " + modificaDinheiroReal(this.documentacaoValores.relacionamento) +
-                    "<br>ITBI: " + modificaDinheiroReal(this.documentacaoValores.itbi) +
-                    "<br>Registro: " + modificaDinheiroReal(this.documentacaoValores.registro)
+                    `Taxa a vista: ${modificaDinheiroReal(this.documentacaoValores.taxa)} `  +
+                    `<br>Relacionamento ${modificaDinheiroReal(this.documentacaoValores.relacionamento)} `+ 
+                    `<br>ITBI: ${modificaDinheiroReal(this.documentacaoValores.itbi)} ` +
+                    `<br>Registro: ${modificaDinheiroReal(this.documentacaoValores.registro)} `
                     )
                 break
 
                 case "bb":
                 resultado(
-                    "Taxa a vista: " + modificaDinheiroReal(this.documentacaoValores.taxa) +
-                    "<br>ITBI: " + modificaDinheiroReal(this.documentacaoValores.itbi) +
-                    "<br>Registro: " + modificaDinheiroReal(this.documentacaoValores.registro)
+                    `Taxa a vista: ${modificaDinheiroReal(this.documentacaoValores.taxa)} `  + 
+                    `<br>ITBI: ${modificaDinheiroReal(this.documentacaoValores.itbi)} ` +
+                    `<br>Registro: ${modificaDinheiroReal(this.documentacaoValores.registro)} `
                     )
                 break
 
                 case "itau":
                 resultado(
-                    "Taxa a vista: " + modificaDinheiroReal(this.documentacaoValores.taxa) +
-                    "<br>ITBI: " + modificaDinheiroReal(this.documentacaoValores.itbi) +
-                    "<br>Registro: " + modificaDinheiroReal(this.documentacaoValores.registro)
+                    `Taxa a vista: ${modificaDinheiroReal(this.documentacaoValores.taxa)} `  + 
+                    `<br>ITBI: ${modificaDinheiroReal(this.documentacaoValores.itbi)} ` +
+                    `<br>Registro: ${modificaDinheiroReal(this.documentacaoValores.registro)} `
                     )
                 break
             }
@@ -230,5 +243,7 @@ document.getElementById('compra').addEventListener('change', () => {
   document.getElementById('enquadramento').addEventListener('change', () => {
     documentacao.lerDados();
   });
+
+
   
   
