@@ -83,7 +83,6 @@ class Documentacao {
             case "itau":
                 telaAgencia.classList.add("display-none")
                 break
-
         }
     }
 
