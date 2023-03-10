@@ -156,7 +156,32 @@ class Documentacao {
         }
 
         else {
-            console.log(this.documentacaoValores)
+            switch(this.valor.banco){
+                case "caixa":
+                resultado(
+                    "Taxa a vista: " + modificaDinheiroReal(this.documentacaoValores.taxa) +
+                    "<br>Relacionamento " + modificaDinheiroReal(this.documentacaoValores.relacionamento) +
+                    "<br>ITBI: " + modificaDinheiroReal(this.documentacaoValores.itbi) +
+                    "<br>Registro: " + modificaDinheiroReal(this.documentacaoValores.registro)
+                    )
+                break
+
+                case "bb":
+                resultado(
+                    "Taxa a vista: " + modificaDinheiroReal(this.documentacaoValores.taxa) +
+                    "<br>ITBI: " + modificaDinheiroReal(this.documentacaoValores.itbi) +
+                    "<br>Registro: " + modificaDinheiroReal(this.documentacaoValores.registro)
+                    )
+                break
+
+                case "itau":
+                resultado(
+                    "Taxa a vista: " + modificaDinheiroReal(this.documentacaoValores.taxa) +
+                    "<br>ITBI: " + modificaDinheiroReal(this.documentacaoValores.itbi) +
+                    "<br>Registro: " + modificaDinheiroReal(this.documentacaoValores.registro)
+                    )
+                break
+            }
         }
 
 
