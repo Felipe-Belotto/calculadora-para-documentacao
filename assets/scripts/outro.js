@@ -3,14 +3,12 @@ let calcular = document.getElementById("conteudo_tela")
 calcular.addEventListener('change', calculaDocumentacao)
 
 let botaoCopiar = document.getElementById('botaoCopiar')
-
 botaoCopiar.addEventListener('click', function () {
     let valoresDocumentacao = document.getElementById('resposta')
     navigator.clipboard.writeText(valoresDocumentacao.textContent)
 })
 
 let botaoRecarregar = document.getElementById("botaoRecarregar")
-
 botaoRecarregar.addEventListener('click', function () {
     location.reload();
 });
