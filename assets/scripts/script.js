@@ -71,27 +71,37 @@ class Documentacao {
 
         let telaEnquadramento = document.querySelector(".caixa_enquadramento")
         telaEnquadramento.classList.remove("display-none")
-
+        console.log(this.valor.banco)
         switch(this.valor.banco){
-    
+        
         case "caixa":
+        
         switch(this.valor.enquadramento){
 
-            case "mcmv" || "proCotista": 
+            case "mcmv": 
+            this.enquadramentoValores.taxa = (this.valor.financiamento * 0.015) + 50
+            break
+
+            case "proCotista": 
             this.enquadramentoValores.taxa = (this.valor.financiamento * 0.015) + 50
             break
 
             case "sbpe": 
             this.enquadramentoValores.taxa = 1050
-            break   
-        }    
+            break 
+        }
+        break
+        
 
         case "bb":
-
+        
         switch(this.valor.enquadramento){
             
+            case "mcmv": 
+            this.enquadramentoValores.taxa = (this.valor.financiamento * 0.015) + 50
+            break
 
-            case "mcmv" || "proCotista": 
+            case "proCotista": 
             this.enquadramentoValores.taxa = (this.valor.financiamento * 0.015) + 50
             break
 
@@ -99,17 +109,13 @@ class Documentacao {
             this.enquadramentoValores.taxa = 1365
             break   
         }
+        break
         
         case "itau":
         
-        if(this.valor.enquadramento == "nenhum"){
-            this.enquadramentoValores.taxa = 1950
-        }
-
-        else{
-            resultado(" No Itau não há outros enquadramentos ")
-        }
-
+        telaEnquadramento.classList.add("display-none")
+        this.enquadramentoValores.taxa = 1950
+        break
         }
     }
 
@@ -150,11 +156,10 @@ class Documentacao {
     }
 
     else {
-       
-
+        console.log(this.documentacaoValores)
     }
 
-    console.log(this.documentacaoValores)
+    
     }
 
 
