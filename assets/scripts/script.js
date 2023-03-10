@@ -1,6 +1,6 @@
 
 let calcular = document.getElementById("conteudo_tela")
-calcular.addEventListener('input', calculaDocumentacao)
+calcular.addEventListener('change', calculaDocumentacao)
 
 let botaoCopiar = document.getElementById('botaoCopiar')
 
