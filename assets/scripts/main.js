@@ -161,7 +161,6 @@ class Documentacao {
         let resultado = (valor) => { resposta.innerHTML = valor }
         let modificaDinheiroReal = (valor) => { return valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }); }        
 
-        
 
         function executaErro() {
             resposta.classList.remove('caixa_reposta')
