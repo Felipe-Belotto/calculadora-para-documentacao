@@ -18,28 +18,28 @@
             <div class="preencher_conteudo">
             <div id="conteudo_tela">
 
-                <div class="caixa_compra caixa_preencher">
+                <section class="caixa_compra caixa_preencher">
                     <label class="caixa_informativa">Valor do compra e venda</label>
                     <input type="number" name="compra" id="compra" class="box-input" autocomplete="off"
                         placeholder="Digite o valor de compra">
-                </div>
+                </section>
 
-                <div class="caixa_financiamento caixa_preencher">
+                <section class="caixa_financiamento caixa_preencher">
                     <label class="caixa_informativa">Valor do financiamento</label>
                     <input type="number" name="financiamento" id="financiamento" class="box-input"
                         autocomplete="off" placeholder="Digite o valor de financiamento">
-                </div>
+                </section>
 
-                <div class="caixa_cidade caixa_preencher">
+                <section class="caixa_cidade caixa_preencher">
                     <label class="caixa_informativa">Cidade</label>
                     <select id="cidade" class="box-select" required>
                         <option value="nenhum" disabled selected>Selecione a cidade</option>
                         <option value="campinas">Campinas</option>
                         <option value="guarulhos">Guarulhos</option>
                     </select>
-                </div>
+                </section>
 
-                <div class="caixa_banco caixa_preencher">
+                <section class="caixa_banco caixa_preencher">
                     <label class="caixa_informativa">Banco</label>
                     <select id="banco" class="box-select" required>
                         <option value="nenhum" disabled selected>Selecione o banco</option>
@@ -47,18 +47,18 @@
                         <option value="bb" id="bb">Banco do Brasil</option>
                         <option value="itau" id="itau">Itau</option>
                     </select>
-                </div>
+                </section>
 
-                <div class="caixa_agencia caixa_preencher display-none">
+                <section class="caixa_agencia caixa_preencher display-none">
                     <label class="caixa_informativa">Agência</label>
                     <select id="agencia" class="box-select">
                         <option value="nenhum" disabled selected>Selecione a agência</option>
                         <option value="0676" id="0676">0676 - Conceição</option>
                         <option value="3231" id="3231">3231 - Bom Sucesso</option>
                     </select>
-                </div>
+                </section>
 
-                <div class="caixa_enquadramento caixa_preencher display-none">
+                <section class="caixa_enquadramento caixa_preencher display-none">
                     <label class="caixa_informativa informativa-enquadramento">Enquadramento</label>
                     <select id="enquadramento" class="box-select">
                         <option value="nenhum" disabled selected>Selecione o enquadramento</option>
@@ -66,17 +66,17 @@
                         <option value="proCotista">Pró cotista</option>
                         <option value="sbpe">SBPE</option>
                     </select>
-                </div>
+                </section>
                 <br>
-                <div id="resposta" class="caixa_resposta"></div>
-                <div class="caixa_botao">
+                <section id="resposta" class="caixa_resposta"></section>
+                <section class="caixa_botao">
                     
                     <button type="button" class="botao" value="recarregar" id="botaoRecarregar"> Recarregar </button>
                     
                     <button type="button" class="botao" value="copiar" id="botaoCopiar"> Copiar </button>
                     
-                </div>
-                </div></div>
+                </section>
+                
 
                 <script src="assets/scripts/main.js"></script>
             </div>
