@@ -205,7 +205,7 @@ main{
     }
 
     .titulo-pagina{
-        padding: 0;
+        padding: 1vh 0 0 0;
     }
 
     .caixa_resposta{
