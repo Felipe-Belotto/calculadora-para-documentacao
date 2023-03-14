@@ -132,12 +132,12 @@ main{
 
 .botao {
     width: 40%;
-    height: 4.5vh;
+    height: 4vh;
     font-size: 10px;
     margin: 0 1em 1.5em 1em;
     padding: 1em 0 1em 0;
     text-transform: uppercase;
-    border-radius: 0.5em;
+    border-radius: 2em;
 }
 
 #botaoRecarregar {
