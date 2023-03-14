@@ -19,14 +19,6 @@
     --cor-erro: #ff5555;
     --verde: #008000;
 
-    --titulo-texto2: white;
-    --caixa-calculadora2: #18191d ;
-    --titulo-pagina2: var(--caixa-calculadora2);
-    --caixa-informativa2: #0c0c0c96;
-    --botao2: #2e313a ;
-    --botao-texto2: white ;
-    --fundo-input2: #2f2c2c74 ;
-    --cor-hover2: rgba(128, 128, 128, 0.294) ;
 }
 
 body {
@@ -236,7 +228,6 @@ main{
         font-size: 1.5em;
         margin: 5vh 0 0 0;
         padding: 1vh 0;
-        color: var(--titulo-texto2);
     }
     
     .caixa_informativa{
@@ -281,15 +272,12 @@ main{
         border-radius: 0;
         padding: 0;
         font-size: 12px;
-        background-color: var(--caixa-calculadora2);
     }
 
     .titulo-pagina{
-        background-color: var(--titulo-pagina2);
         margin:0;
         font-size: 2em;
         padding: 2vh 0;
-        color: var(--titulo-texto2);
     }
 
     .caixa_informativa{
@@ -297,7 +285,6 @@ main{
         height: 1.5em;
         border-radius: 1em 1em 0.5em 0.5em;
         font-size: 20px;
-        background-color: var(--caixa-informativa2);
         margin: 0.2em 0 0 0;
     }
 
@@ -309,8 +296,6 @@ main{
     .box-input{
         width: 90%;
         height: 2em;
-        background-color: var(--fundo-input2);
-        color: var(--cor-texto);
         margin: 0  0 0.6em 0;     
         border-radius: 0 0 1em 1em;
         padding: 0;
@@ -319,25 +304,21 @@ main{
     .box-select{
         width: 93%;
         height: 2em;
-        background-color: var(--fundo-input2);
         color: var(--cor-texto);
         margin: 0 0 0.6em 0;   
         padding: 0;
-        border: 0.5px var(--caixa-informativa2) solid;
         border-radius: 0 0 1em 1em;
     }
 
     .box-input:focus {
-        background: var(--cor-hover2);
         transform: scale(1.1);
-        border: 0.5px var(--caixa-calculadora2) solid;
+        border: 0.5px var(--caixa-calculadora) solid;
         border-radius: 1em;
     }
 
     .box-select:focus {
-        background: var(--cor-hover2);
         transform: scale(1.1);
-        border: 0.5px var(--caixa-calculadora2) solid;
+        border: 0.5px var(--caixa-calculadora) solid;
         border-radius: 1em;
     }
 
@@ -347,7 +328,6 @@ main{
         margin: 0;
         padding: 0;
         font-size: 1.5em;
-        color: var(--cor-resultado);
     }
 
     .caixa_botao{
@@ -357,8 +337,6 @@ main{
     .botao {
         height: 5vh;
         margin: 0 1em 1em 1em;
-        background-color: var(--botao2);
-        color: var(--botao-texto2);
     }
 
     .display-none{
@@ -393,15 +371,12 @@ main{
         border-radius: 0;
         padding: 0;
         font-size: 12px;
-        background-color: var(--caixa-calculadora2);
     }
 
     .titulo-pagina{
-        background-color: var(--titulo-pagina2);
         margin:0;
         font-size: 2em;
         padding: 1vh 0;
-        color: var(--titulo-texto2);
     }
 
     .caixa_informativa{
@@ -409,7 +384,6 @@ main{
         height: 1.5em;
         border-radius: 1em 1em 0.5em 0.5em;
         font-size: 20px;
-        background-color: var(--caixa-informativa2);
         margin: 0.3em 0 0 0;
     }
 
@@ -421,8 +395,6 @@ main{
     .box-input{
         width: 90%;
         height: 2em;
-        background-color: var(--fundo-input2);
-        color: var(--cor-texto);
         margin: 0  0 0.3em 0;     
         border-radius: 0 0 1em 1em;
         padding: 0;
@@ -431,25 +403,20 @@ main{
     .box-select{
         width: 93%;
         height: 2em;
-        background-color: var(--fundo-input2);
-        color: var(--cor-texto);
         margin: 0 0 0.2em 0;   
         padding: 0;
-        border: 0.5px var(--caixa-informativa2) solid;
         border-radius: 0 0 1em 1em;
     }
 
     .box-input:focus {
-        background: var(--cor-hover2);
         transform: scale(1.1);
-        border: 0.5px var(--caixa-calculadora2) solid;
+        border: 0.5px var(--caixa-calculadora) solid;
         border-radius: 1em;
     }
 
     .box-select:focus {
-        background: var(--cor-hover2);
         transform: scale(1.1);
-        border: 0.5px var(--caixa-calculadora2) solid;
+        border: 0.5px var(--caixa-calculadora) solid;
         border-radius: 1em;
     }
 
@@ -459,7 +426,6 @@ main{
         margin: 0;
         padding: 0;
         font-size: 1.5em;
-        color: var(--cor-resultado);
     }
 
     .caixa_botao{
@@ -469,8 +435,6 @@ main{
     .botao {
         height: 5vh;
         margin: 0 1em 1em 1em;
-        background-color: var(--botao2);
-        color: var(--botao-texto2);
     }
 
     .display-none{
